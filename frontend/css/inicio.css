@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0b3778;
+    color: #333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.title {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.close img {
+    width: 24px;
+    height: 24px;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.pet-list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pet-card {
+    display: flex;
+    align-items: center;
+    background-color: #c9d4e4;
+    border-radius: 20px;
+    padding: 10px 15px;
+    justify-content: space-between;
+}
+
+.pet-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pet-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.pet-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3b4a69;
+}
+
+.pet-race {
+    font-size: 13px;
+    color: #7d8ca5;
+}
+
+.pet-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.pet-actions img {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.report-button {
+    background-color: #3b4a69;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.report-button:hover {
+    background-color: #2a3550;
+}
+
+/* Estilos para el botón "Ver en Mapa" con texto */
+.map-btn {
+    background-color: #3b4a69;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-btn:hover {
+    background-color: #2a3550;
+}

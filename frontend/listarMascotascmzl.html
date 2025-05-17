@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrar Mascotas</title>
+  <link rel="stylesheet" href="css/inicio.css">
+
+  <!-- Estilos de botones de reporte -->
+  <style>
+    .report-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .report-buttons button {
+      background-color: #4ecb8f;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .report-buttons button:hover {
+      background-color: #3cb97d;
+    }
+
+    @media (max-width: 600px) {
+      .report-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .report-buttons button {
+        width: 80%;
+      }
+    }
+
+    /* Contenedor para la gráfica con fondo blanco */
+    .chart-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: white; /* Fondo blanco */
+      padding: 20px; /* Espaciado interno */
+      border-radius: 8px; /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    }
+  </style>
+
+  <!-- Librerías para PDF y Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Script de lógica -->
+  <script src="js/listarmascotascmzl.js" defer></script>
+</head>
+<body>
+  <div class="header">
+    <a href="mapaMascotas.html" class="map-btn">Ver Mapa</a>
+    <h1 class="title">Administrar Mascotas</h1>
+    <a href="index.html" class="close"><img src="images/btn-close.svg" alt="Cerrar"></a>
+  </div>
+
+  <div class="content">
+    <a href="crearmascotas.html" class="btn-add">
+      <img src="images/btn-add.svg" alt="Adicionar">
+    </a>
+
+    <div id="petList" class="pet-list"></div>
+
+    <!-- Botones de reportes -->
+    <div class="report-buttons">
+      <button id="btnReporteTodas">Reporte de todas</button>
+      <button id="btnReporteDisponibles">Reporte de disponibles</button>
+      <button id="btnReporteAdoptadas">Reporte de adoptadas</button>
+    </div>
+
+    <!-- Gráfica -->
+    <div class="chart-container">
+      <canvas id="graficaMascotas"></canvas>
+    </div>
+  </div>
+
+  <!-- Script para cargar la gráfica -->
+  <script>
+    async function loadGraficaMascotas() {
+      const API_URL = "http://192.168.1.5:3000";
+      try {
+        const response = await fetch(`${API_URL}/petscmzl`);
+        if (!response.ok) throw new Error("Error en la respuesta");
+
+        const pets = await response.json();
+        const total = pets.length;
+        const disponibles = pets.filter(p => p.estado?.toLowerCase() === "disponible").length;
+        const adoptadas = pets.filter(p => p.estado?.toLowerCase() === "adoptado").length;
+
+        const ctx = document.getElementById('graficaMascotas').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Total', 'Disponibles', 'Adoptadas'],
+            datasets: [{
+              label: 'Cantidad de Mascotas',
+              data: [total, disponibles, adoptadas],
+              backgroundColor: ['#4ecb8f', '#36a2eb', '#ff6384']
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: 'Resumen de Mascotas'
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  stepSize: 1
+                }
+              }
+            }
+          }
+        });
+      } catch (err) {
+        console.error("Error al cargar la gráfica:", err);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadGraficaMascotas);
+  </script>
+</body>
+</html>

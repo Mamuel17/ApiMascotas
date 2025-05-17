@@ -1,0 +1,105 @@
+body {
+  font-family: 'Roboto', sans-serif; /* Cambié la tipografía */
+  background-color: #0b3778; /* Cambié el color de fondo */
+  color: #F0F0F0; /* Cambié el color del texto */
+  margin: 0;
+  padding: 30px; /* Aumenté el padding */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Cambié la alineación vertical */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Aumenté el ancho máximo */
+  margin-bottom: 40px; /* Más espacio para mejorar el balance visual */
+}
+
+.header h1 {
+  font-size: 28px; /* Aumenté el tamaño de la fuente */
+  margin: 0;
+  text-align: left; /* Alineación a la izquierda */
+  flex-grow: 1;
+  color: #F0F0F0; /* Cambié el color del título */
+}
+
+.header a {
+  color: #F0F0F0; /* Cambié el color del enlace */
+  font-size: 28px; /* Aumenté el tamaño de la fuente */
+  text-decoration: none;
+  width: 40px; /* Cambié el ancho */
+  text-align: center;
+}
+
+.pet-photo {
+  width: 140px; /* Aumenté el tamaño */
+  height: 140px;
+  border-radius: 50%;
+  background-color: #F0F0F0; /* Cambié el color de fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 40px; /* Aumenté el margen inferior */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añadí sombra para efecto */
+  transition: transform 0.3s ease; /* Transición para efectos */
+}
+
+.pet-photo:hover {
+  transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+}
+
+.pet-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-details {
+  width: 100%;
+  max-width: 500px; /* Aumenté el ancho máximo */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Más espacio entre los elementos */
+  margin: 0 auto;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #27548A; /* Cambié el color de fondo */
+  padding: 14px 22px; /* Aumenté el padding */
+  border-radius: 12px; /* Cambié el radio de bordes */
+  font-size: 18px; /* Aumenté el tamaño de la fuente */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Añadí sombra */
+}
+
+.label {
+  font-weight: bold;
+  color: #F0F0F0;
+}
+
+.value {
+  color: #C8D6E5; /* Cambié el color de los valores */
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px; /* Espacio entre elementos */
+}
+
+.map {
+  width: 100%;
+  height: 250px; /* Aumenté la altura del mapa */
+  border-radius: 12px; /* Cambié el radio de bordes */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añadí sombra */
+}

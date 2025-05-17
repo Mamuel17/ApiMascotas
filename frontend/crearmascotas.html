@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Mascotas</title>
+  <link rel="stylesheet" href="css/crearmascotas.css">
+</head>
+<body>
+  <!-- CABECERA CON BOTONES -->
+  <div class="header">
+    <a href="listarMascotascmzl.html" class="back-btn">←</a>
+    <h1>Adicionar Mascota</h1>
+    <a href="listarMascotascmzl.html" class="close-btn">×</a>
+  </div>
+
+  <!-- FOTO CIRCULAR VACÍA -->
+  <div class="pet-photo">
+    <img id="petImage" src="" alt="Foto de la mascota" style="display: none;">
+  </div>
+
+  <form id="petForm">
+    <label for="name">Nombre de la mascota</label>
+    <div class="input-card">
+      <input type="text" id="name" placeholder="Nombre de la mascota" required>
+    </div>
+
+    <label for="race">Raza</label>
+    <div class="input-card">
+      <select id="race" required>
+        <option value="">Seleccione una raza</option>
+      </select>
+    </div>
+
+    <label for="category">Categoría</label>
+    <div class="input-card">
+      <select id="category" required>
+        <option value="">Seleccione una categoría</option>
+      </select>
+    </div>
+
+    <label for="gender">Género</label>
+    <div class="input-card">
+      <select id="gender" required>
+        <option value="">Seleccione el género</option>
+      </select>
+    </div>
+
+    <label for="User">Usuario</label>
+    <div class="input-card">
+      <select id="User" required>
+        <option value="">Seleccione un usuario</option>
+      </select>
+    </div>
+
+    <label for="photo">Foto de la mascota</label>
+    <div class="input-card">
+      <input type="file" id="photo" accept="image/*">
+    </div>
+
+    <label for="latitude">Latitud</label>
+    <div class="input-card">
+      <input type="number" step="any" id="latitude" placeholder="Latitud (ej. 4.60971)">
+      <button type="button" id="getLocation">Obtener Ubicación</button>
+    </div>
+
+    <label for="longitude">Longitud</label>
+    <div class="input-card">
+      <input type="number" step="any" id="longitude" placeholder="Longitud (ej. -74.08175)">
+    </div>
+
+    <label for="estado">Estado</label>
+    <div class="input-card">
+      <select id="estado" required>
+        <option value="Disponible">Disponible</option>
+        <option value="Adoptado">Adoptado</option>
+      </select>
+    </div>
+
+    <button type="submit" class="submit-btn">Registrar Mascota</button>
+  </form>
+  
+  <script src="js/crearmascota_cmzl.js"></script>
+</body>
+</html>

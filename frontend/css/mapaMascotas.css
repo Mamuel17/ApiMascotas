@@ -1,0 +1,49 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1E2A47; /* Fondo más oscuro y elegante */
+  color: #e0e0e0; /* Color de texto más suave */
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 700px; /* Amplié el máximo para más espacio */
+  margin-bottom: 30px; /* Aumento el espacio entre el encabezado y el mapa */
+  background-color: #293C59; /* Fondo oscuro para el encabezado */
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.header h1 {
+  font-size: 28px;
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #e0e0e0; /* Color amarillo para destacar el título */
+}
+
+.back-btn {
+  color: #e0e0e0; /* Color amarillo similar al del título */
+  font-size: 28px;
+  text-decoration: none;
+  width: 30px;
+  text-align: center;
+}
+
+.map {
+  width: 100%;
+  max-width: 700px; /* Amplié el tamaño máximo */
+  height: 600px; /* Aumenté la altura para un mapa más grande */
+  border-radius: 12px; /* Bordes redondeados más suaves */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modificar Mascota</title>
+  <link rel="stylesheet" href="css/editarmascotas.css">
+</head>
+<body>
+  <div class="header">
+    <a href="listarMascotascmzl.html">←</a>
+    <h1>Modificar Mascota</h1>
+    <a href="listarMascotascmzl.html">✕</a>
+  </div>
+
+  <div class="pet-photo">
+    <img id="petPhoto" src="" alt="Foto de la mascota">
+  </div>
+
+  <form id="petForm">
+    <input type="hidden" id="petId" name="petId">
+
+    <div class="input-card">
+      <input type="text" id="name" placeholder="Nombre de la mascota" required>
+    </div>
+
+    <div class="input-card">
+      <select id="race" required></select>
+    </div>
+
+    <div class="input-card">
+      <select id="category" required></select>
+    </div>
+
+    <div class="input-card">
+      <input type="file" id="photo" accept="image/*">
+    </div>
+
+    <div class="input-card">
+      <select id="gender" required></select>
+    </div>
+
+    <div class="input-card">
+      <select id="User" required></select>
+    </div>
+
+    <div class="input-card">
+      <select id="estado" required>
+        <option value="Disponible">Disponible</option>
+        <option value="Adoptado">Adoptado</option>
+      </select>
+    </div>
+
+    <button type="submit" class="submit-btn">Modificar</button>
+  </form>
+
+  <script src="js/editarmascota_cmzl.js"></script>
+</body>
+</html>

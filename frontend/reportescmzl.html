@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte de Mascotas</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script defer src="js/reporteMascotas.js"></script>
+</head>
+<body>
+  <h1>Generar Reportes de Mascotas</h1>
+  <button onclick="generarReporte('todas')">Reporte de Todas</button>
+  <button onclick="generarReporte('disponible')">Solo Disponibles</button>
+  <button onclick="generarReporte('adoptado')">Solo Adoptadas</button>
+</body>
+</html>
